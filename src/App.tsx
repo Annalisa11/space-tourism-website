@@ -9,8 +9,7 @@ import NoMatch from "./pages/NoMatch";
 
 function App() {
   return (
-    <div className="App">
-      App
+    <div className="border-box m-0 p-0">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
