@@ -25,7 +25,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative h-screen bg-blue-950">
+    <div className="relative h-screen bg-[url('./assets/img/home/background-home-mobile.jpg')]">
       <div
         className={classNames(" absolute bottom-0 top-0 w-screen  ", {
           "backdrop-blur-sm": !isMenuOpen,
@@ -61,7 +61,9 @@ const Layout = () => {
         </nav>
       </div>
 
-      <Outlet />
+      <div className="pt-16">
+        <Outlet />
+      </div>
     </div>
   );
 };
