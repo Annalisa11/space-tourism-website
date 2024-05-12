@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import MenuIcon from "../assets/img/shared/icon-hamburger.svg";
-import LogoIcon from "../assets/img/shared/logo.svg";
+import MenuIcon from "../assets/shared/icon-hamburger.svg";
+import LogoIcon from "../assets/shared/logo.svg";
 import { useState } from "react";
 import classNames from "classnames";
 
@@ -12,7 +12,7 @@ type NavEntry = {
 const Layout = () => {
   const navEntries: NavEntry[] = [
     { title: "Home", url: "/" },
-    { title: "Description", url: "/description" },
+    { title: "Destinations", url: "/destination" },
     { title: "Crew", url: "/crew" },
     { title: "Technology", url: "/technology" },
   ];
@@ -25,7 +25,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative h-screen bg-[url('./assets/img/home/background-home-mobile.jpg')] bg-cover bg-no-repeat ">
+    <div className="relative h-screen bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-no-repeat ">
       <header className="z-1000 flex justify-between p-4">
         <img src={LogoIcon} />
         <img
