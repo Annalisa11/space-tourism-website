@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import MenuIcon from "../starter-code/assets/shared/icon-hamburger.svg";
-import LogoIcon from "../starter-code/assets/shared/logo.svg";
+import MenuIcon from "../assets/img/shared/icon-hamburger.svg";
+import LogoIcon from "../assets/img/shared/logo.svg";
 import { useState } from "react";
 import classNames from "classnames";
 
@@ -25,43 +25,45 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative h-screen bg-[url('./assets/img/home/background-home-mobile.jpg')]">
-      <div
-        className={classNames(" absolute bottom-0 top-0 w-screen  ", {
-          "backdrop-blur-sm": !isMenuOpen,
-        })}
+    <div className="relative h-screen bg-[url('./assets/img/home/background-home-mobile.jpg')] bg-cover bg-no-repeat ">
+      <header className="z-1000 flex justify-between p-4">
+        <img src={LogoIcon} />
+        <img
+          src={MenuIcon}
+          className="w-12 hover:cursor-pointer"
+          onClick={toggleMenu}
+        />
+      </header>
+      <nav
+        className={classNames(
+          { hidden: isMenuOpen },
+          "text-purple-light absolute bottom-0 top-0 z-0 w-full bg-black/70  backdrop-blur-md",
+        )}
       >
-        <div className="flex w-full justify-between  p-4 ">
+        <header className="z-1000 flex justify-between p-4">
           <img src={LogoIcon} />
           <img
             src={MenuIcon}
             className="w-12 hover:cursor-pointer"
             onClick={toggleMenu}
           />
-        </div>
-        <nav
-          className={classNames(
-            { hidden: isMenuOpen },
-            "text-purple-light w-full  ",
-          )}
-        >
-          <ul className="flex flex-col justify-between  p-12 ">
-            {navEntries.map(({ title, url }, index) => (
-              <li key={index}>
-                <Link
-                  onClick={toggleMenu}
-                  className="flex justify-center p-8 hover:cursor-pointer"
-                  to={url}
-                >
-                  {title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+        </header>
+        <ul className="flex flex-col justify-between  ">
+          {navEntries.map(({ title, url }, index) => (
+            <li key={index}>
+              <Link
+                onClick={toggleMenu}
+                className="flex justify-center p-8 hover:cursor-pointer"
+                to={url}
+              >
+                {title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-      <div className="pt-16">
+      <div className="">
         <Outlet />
       </div>
     </div>

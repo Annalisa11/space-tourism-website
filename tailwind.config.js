@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         headline: ["EB Garamond", "serif"],
+        body: ["Dosis", "sans-serif"],
       },
       colors: {
         purple: { light: "#d0d6f9" },
