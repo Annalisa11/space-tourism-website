@@ -12,10 +12,10 @@ const Home = () => {
         experience!
       </p>
       <Link
-        to={"/description"}
+        to={"/destination"}
         className="mt-16 flex h-52 w-52 items-center justify-center rounded-full bg-white hover:cursor-pointer"
       >
-        <p className="font-headline p-4 text-4xl uppercase text-black">
+        <p className="p-4 font-headline text-4xl uppercase text-black">
           Explore
         </p>
       </Link>

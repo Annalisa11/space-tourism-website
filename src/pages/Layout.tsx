@@ -25,7 +25,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative h-screen bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-no-repeat ">
+    <div className="relative z-0 h-screen bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-no-repeat">
       <header className="z-1000 flex justify-between p-4">
         <img src={LogoIcon} />
         <img
@@ -37,7 +37,7 @@ const Layout = () => {
       <nav
         className={classNames(
           { hidden: isMenuOpen },
-          "text-purple-light absolute bottom-0 top-0 z-0 w-full bg-black/70  backdrop-blur-md",
+          "absolute bottom-0 top-0 z-50 w-full bg-black/70 text-purple-light backdrop-blur-md",
         )}
       >
         <header className="z-1000 flex justify-between p-4">
