@@ -10,6 +10,11 @@ module.exports = {
       colors: {
         purple: { light: "#d0d6f9" },
       },
+      backgroundImage: {
+        "home-mobile": "url('./assets/home/background-home-mobile.jpg')",
+        "other-mobile":
+          "url('./assets/destination/background-destination-mobile.jpg')",
+      },
     },
   },
   plugins: [],
