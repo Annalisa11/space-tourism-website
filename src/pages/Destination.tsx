@@ -51,12 +51,24 @@ const Destination = () => {
   const imageName = selectedPlanet.images.png.split("/").pop() ?? "";
   const imagePath = "../assets/destination/".concat(imageName);
   const swiperElRef = useRef(null);
+  console.log("data", data.destinations);
+  const test = `${planets[0].images.png}`;
+  const testt = planets[0].name.toLowerCase();
 
   useEffect(() => {
     if (!swiperElRef || !swiperElRef.current) {
       return;
     }
   }, []);
+
+  const images: string[] = [];
+  const importImages = () =>
+    planets.forEach((planet) =>
+      import(`${planet.images.png}`).then((image) => images.push(image)),
+    );
+
+  // importImages();
+  console.log(images);
 
   return (
     <div className="">
@@ -66,7 +78,7 @@ const Destination = () => {
             <strong>02</strong> Destination
           </h3>
           {/* <img
-            src={require("../assets/destination/image-moon.png")}
+            src={require(`../assets/destination/image-${testt}.png`)}
             alt="planet"
             className=""
           /> */}
@@ -100,18 +112,18 @@ const Destination = () => {
               },
             }}
           >
-            <SwiperSlide>
-              <img src={img_one} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src={img_twp} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src={img_three} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src={img_three} />
-            </SwiperSlide>
+            {planets.map((planet) => {
+              return (
+                <SwiperSlide>
+                  <img
+                    src={require(
+                      `../assets/destination/image-${planet.name.toLowerCase()}.png`,
+                    )}
+                    alt={planet.name}
+                  />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
           <div className="mt-6 text-center">
             <h1>{selectedPlanet.name}</h1>

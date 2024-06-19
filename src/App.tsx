@@ -8,7 +8,7 @@ import NoMatch from "./pages/NoMatch";
 
 function App() {
   return (
-    <div className="border-box m-0 p-0">
+    <div className="border-box m-0 h-screen overflow-x-hidden bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-fixed bg-no-repeat p-0">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

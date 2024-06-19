@@ -25,7 +25,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="relative z-0 h-screen bg-[url('./assets/home/background-home-mobile.jpg')] bg-cover bg-no-repeat">
+    <div className="relative z-0 h-screen ">
       <header className="z-1000 flex justify-between p-4">
         <img src={LogoIcon} />
         <img
@@ -63,9 +63,7 @@ const Layout = () => {
         </ul>
       </nav>
 
-      <div className="">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 };

@@ -48,6 +48,10 @@ code {
   margin-left: -2rem;
 }
 
+.swiper-container.swiper-container-initialized.swiper-container-horizontal {
+  margin-left: -2rem;
+}
+
 .swiper-slide {
   width: 100%;
 }
