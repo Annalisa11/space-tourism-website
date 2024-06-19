@@ -1,34 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import data from "../assets/data.json";
-// import { register } from "swiper/element/bundle";
-// import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper/core";
 import "swiper/swiper.min.css";
-import img_one from "../assets/destination/image-mars.png";
-import img_twp from "../assets/destination/image-moon.png";
-import img_three from "../assets/destination/image-europa.png";
-// import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
-import * as ReactDOMServer from "react-dom/server";
 
 // install swiper modules
 SwiperCore.use([Navigation, Pagination]);
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "swiper-container": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
-      "swiper-slide": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
-    }
-  }
-}
 
 type Planet = {
   name: string;
@@ -41,34 +19,9 @@ type Planet = {
   travel: string;
 };
 
-// register();
 const Destination = () => {
   const planets = data.destinations;
   const [selectedPlanet, setSelectedPlanet] = useState<Planet>(planets[0]);
-  console.log(selectedPlanet.images.png);
-  console.log(`.${selectedPlanet.images.png}`);
-
-  const imageName = selectedPlanet.images.png.split("/").pop() ?? "";
-  const imagePath = "../assets/destination/".concat(imageName);
-  const swiperElRef = useRef(null);
-  console.log("data", data.destinations);
-  const test = `${planets[0].images.png}`;
-  const testt = planets[0].name.toLowerCase();
-
-  useEffect(() => {
-    if (!swiperElRef || !swiperElRef.current) {
-      return;
-    }
-  }, []);
-
-  const images: string[] = [];
-  const importImages = () =>
-    planets.forEach((planet) =>
-      import(`${planet.images.png}`).then((image) => images.push(image)),
-    );
-
-  // importImages();
-  console.log(images);
 
   return (
     <div className="">
@@ -77,12 +30,6 @@ const Destination = () => {
           <h3 className="text-white">
             <strong>02</strong> Destination
           </h3>
-          {/* <img
-            src={require(`../assets/destination/image-${testt}.png`)}
-            alt="planet"
-            className=""
-          /> */}
-
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
@@ -106,9 +53,8 @@ const Destination = () => {
               setSelectedPlanet(planets[realIndex]);
             }}
             breakpoints={{
-              // Responsive configurations
               640: {
-                slidesPerView: 1, // Adjust slides for smaller screens
+                slidesPerView: 1,
               },
             }}
           >
