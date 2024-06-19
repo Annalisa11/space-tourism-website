@@ -15,6 +15,8 @@ module.exports = {
         "other-mobile":
           "url('./assets/destination/background-destination-mobile.jpg')",
         "crew-mobile": "url('./assets/crew/background-crew-mobile.jpg')",
+        "tech-mobile":
+          "url('./assets/technology/background-technology-mobile.jpg')",
       },
     },
   },

@@ -37,7 +37,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(192, 192, 192, 0.32);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+}
 
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: white;
+}
 .swiper-container {
   height: auto;
   /* width: 100%; */
@@ -86,16 +96,4 @@ code {
 .names {
   color: white;
   display: inline-flex;
-}
-
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(192, 192, 192, 0.32);
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.16);
-  border-radius: 50%;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: white;
 }

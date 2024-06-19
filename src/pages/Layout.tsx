@@ -14,7 +14,7 @@ const Layout = () => {
       case "/crew":
         return "bg-crew-mobile";
       default:
-        return "bg-home-mobile";
+        return "bg-tech-mobile";
     }
   };
 

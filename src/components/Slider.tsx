@@ -16,15 +16,20 @@ type Props<T extends SliderType> = {
   onSlideChange: (index: number) => void;
   imageFolder: string;
   type: BulletType;
+  imageType?: ImageType;
+  jpg?: boolean;
 };
 
 export type BulletType = "bullets" | "names";
+export type ImageType = "landscape" | "portrait";
 
 const Slider = <T extends SliderType>({
   data,
   onSlideChange,
   imageFolder,
   type,
+  imageType,
+  jpg,
 }: Props<T>) => {
   return (
     <Swiper
@@ -65,7 +70,7 @@ const Slider = <T extends SliderType>({
           <SwiperSlide>
             <img
               src={require(
-                `../assets/${imageFolder}/image-${item.name.toLowerCase().replace(" ", "-")}.png`,
+                `../assets/${imageFolder}/image-${item.name.toLowerCase().replace(" ", "-")}${imageType ? "-" + imageType : ""}.${jpg ? "jpg" : "png"}`,
               )}
               alt={item.name}
             />
