@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper/core";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
+// import "swiper/components/pagination/pagination.min.css";
 
 // install swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -13,9 +14,18 @@ export type SliderType = {
 type Props<T extends SliderType> = {
   data: T[];
   onSlideChange: (index: number) => void;
+  imageFolder: string;
+  type: BulletType;
 };
 
-const Slider = <T extends SliderType>({ data, onSlideChange }: Props<T>) => {
+export type BulletType = "bullets" | "names";
+
+const Slider = <T extends SliderType>({
+  data,
+  onSlideChange,
+  imageFolder,
+  type,
+}: Props<T>) => {
   return (
     <Swiper
       spaceBetween={50}
@@ -23,16 +33,21 @@ const Slider = <T extends SliderType>({ data, onSlideChange }: Props<T>) => {
       pagination={{
         clickable: true,
         type: "bullets",
-        bulletElement: "span",
-        renderBullet: function (index, className) {
-          return (
-            '<span class="test ' +
-            className +
-            '">' +
-            data[index].name +
-            "</span>"
-          );
-        },
+        bulletElement: type === "bullets" ? undefined : "span",
+        renderBullet:
+          type === "bullets"
+            ? undefined
+            : function (index, className) {
+                return (
+                  '<span class="' +
+                  type +
+                  " " +
+                  className +
+                  '">' +
+                  data[index].name +
+                  "</span>"
+                );
+              },
       }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={({ realIndex }) => {
@@ -50,7 +65,7 @@ const Slider = <T extends SliderType>({ data, onSlideChange }: Props<T>) => {
           <SwiperSlide>
             <img
               src={require(
-                `../assets/destination/image-${item.name.toLowerCase()}.png`,
+                `../assets/${imageFolder}/image-${item.name.toLowerCase().replace(" ", "-")}.png`,
               )}
               alt={item.name}
             />

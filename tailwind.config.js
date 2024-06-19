@@ -14,6 +14,7 @@ module.exports = {
         "home-mobile": "url('./assets/home/background-home-mobile.jpg')",
         "other-mobile":
           "url('./assets/destination/background-destination-mobile.jpg')",
+        "crew-mobile": "url('./assets/crew/background-crew-mobile.jpg')",
       },
     },
   },

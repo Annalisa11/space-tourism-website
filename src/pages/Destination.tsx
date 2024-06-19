@@ -1,6 +1,7 @@
 import { useState } from "react";
 import data from "../assets/data.json";
 import Slider from "../components/Slider";
+import SectionHeadline from "../components/SectionHeadline";
 
 type Planet = {
   name: string;
@@ -24,20 +25,21 @@ const Destination = () => {
   return (
     <div className="">
       <div>
-        <div className="flex flex-col p-8">
-          <h3 className="text-white">
-            <strong>02</strong> Destination
-          </h3>
-          <Slider data={planets} onSlideChange={onSlideChange} />
-          <div className="mt-6 text-center">
-            <h1>{selectedPlanet.name}</h1>
-            <p>{selectedPlanet.description}</p>
-            <hr />
+        <SectionHeadline number="01" title="destination" />
+        <Slider
+          data={planets}
+          onSlideChange={onSlideChange}
+          imageFolder="destination"
+          type="names"
+        />
+        <div className="mt-6 text-center">
+          <h1>{selectedPlanet.name}</h1>
+          <p>{selectedPlanet.description}</p>
+          <hr />
 
-            <p className="text-md uppercase">avg, distance</p>
-            <div className="font-headline text-5xl text-white">
-              {selectedPlanet.distance}
-            </div>
+          <p className="text-md uppercase">avg, distance</p>
+          <div className="font-headline text-5xl text-white">
+            {selectedPlanet.distance}
           </div>
         </div>
       </div>
