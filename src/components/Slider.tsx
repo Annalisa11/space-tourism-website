@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper/core";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
-// import "swiper/components/pagination/pagination.min.css";
 
 // install swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -20,7 +19,7 @@ type Props<T extends SliderType> = {
   jpg?: boolean;
 };
 
-export type BulletType = "bullets" | "names";
+export type BulletType = "bullets" | "names" | "numbers";
 export type ImageType = "landscape" | "portrait";
 
 const Slider = <T extends SliderType>({
@@ -31,6 +30,17 @@ const Slider = <T extends SliderType>({
   imageType,
   jpg,
 }: Props<T>) => {
+  const renderBulletType = (index: number) => {
+    switch (type) {
+      case "names":
+        return data[index].name;
+      case "numbers":
+        return index + 1;
+      default:
+        return "";
+    }
+  };
+
   return (
     <Swiper
       spaceBetween={50}
@@ -38,21 +48,18 @@ const Slider = <T extends SliderType>({
       pagination={{
         clickable: true,
         type: "bullets",
-        bulletElement: type === "bullets" ? undefined : "span",
-        renderBullet:
-          type === "bullets"
-            ? undefined
-            : function (index, className) {
-                return (
-                  '<span class="' +
-                  type +
-                  " " +
-                  className +
-                  '">' +
-                  data[index].name +
-                  "</span>"
-                );
-              },
+        bulletElement: "span",
+        renderBullet: function (index, className) {
+          return (
+            '<span class="' +
+            type +
+            " " +
+            className +
+            '">' +
+            renderBulletType(index) +
+            "</span>"
+          );
+        },
       }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={({ realIndex }) => {
@@ -65,10 +72,11 @@ const Slider = <T extends SliderType>({
         },
       }}
     >
-      {data.map((item) => {
+      {data.map((item, i) => {
         return (
-          <SwiperSlide>
+          <SwiperSlide key={`${item.name}-${i}`}>
             <img
+              className={imageType}
               src={require(
                 `../assets/${imageFolder}/image-${item.name.toLowerCase().replace(" ", "-")}${imageType ? "-" + imageType : ""}.${jpg ? "jpg" : "png"}`,
               )}

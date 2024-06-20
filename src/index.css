@@ -37,20 +37,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(192, 192, 192, 0.32);
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.16);
-  border-radius: 50%;
-}
 
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: white;
-}
+/* slider styles */
+
 .swiper-container {
   height: auto;
-  /* width: 100%; */
   width: calc(100% + 4rem);
   margin-left: -2rem;
   display: flex;
@@ -79,11 +70,9 @@ code {
   display: flex;
   order: 1;
   width: calc(100% + 4rem);
+  align-items: flex-end;
 }
 
-.names.swiper-pagination-bullet-active {
-  border-bottom: 2px solid white;
-}
 .swiper-pagination {
   order: 3;
   width: 100%;
@@ -93,7 +82,45 @@ code {
   gap: 20px;
   font-variant: small-caps;
 }
+
+.names.swiper-pagination-bullet-active {
+  border-bottom: 2px solid white;
+}
+
 .names {
   color: white;
   display: inline-flex;
+}
+
+.numbers.swiper-pagination-bullet {
+  color: rgba(192, 192, 192, 0.32);
+  border: 2px solid rgba(192, 192, 192, 0.32);
+  border-radius: 50%;
+  padding: 20px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numbers.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  border: 2px solid white;
+  color: white;
+}
+
+.bullets.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(192, 192, 192, 0.32);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+}
+
+.bullets.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+img.landscape {
+  width: 100%;
 }

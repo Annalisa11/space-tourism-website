@@ -30,8 +30,8 @@ const Technology = () => {
         data={technologies}
         onSlideChange={onSlideChange}
         imageFolder="technology"
-        type="bullets"
-        imageType="portrait"
+        type="numbers"
+        imageType="landscape"
         jpg
       />
       <div className="mt-6 text-center">
