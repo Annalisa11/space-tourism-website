@@ -34,10 +34,12 @@ const Crew = () => {
         type="bullets"
       />
       <div className="mt-6 text-center">
-        <h2 className="text-lg uppercase text-purple-light opacity-45">
+        <h2 className="text-lg uppercase text-purple-light opacity-45 lg:text-2xl">
           {selectedCrewMember.role}
         </h2>
-        <h1 className="text-2xl uppercase">{selectedCrewMember.name}</h1>
+        <h1 className="text-2xl uppercase lg:text-4xl">
+          {selectedCrewMember.name}
+        </h1>
         <p>{selectedCrewMember.bio}</p>
       </div>
     </div>

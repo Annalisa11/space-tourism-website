@@ -8,7 +8,7 @@ const Layout = () => {
 
   const getBackgroundImage = (pathname: string) => {
     switch (pathname) {
-      case "/tech":
+      case "/technology":
         return "bg-tech-mobile md:bg-tech-tablet lg:bg-tech-desktop";
       case "/destination":
         return "bg-destination-mobile md:bg-destination-tablet lg:bg-destination-desktop";
@@ -26,7 +26,7 @@ const Layout = () => {
       className={`${background} relative h-screen overflow-x-hidden bg-cover bg-fixed bg-no-repeat`}
     >
       <Header />
-      <div className="flex flex-col p-4">
+      <div className="flex flex-col p-12 md:pb-24">
         <Outlet />
       </div>
     </div>

@@ -23,7 +23,7 @@ const Header = () => {
           "relative z-50 flex flex-col md:flex-row lg:mt-16",
         )}
       >
-        <div className="flex justify-between p-6 lg:px-16 ">
+        <div className="flex justify-between p-12">
           <img src={LogoIcon} className="md:w-20" />
           <img
             src={MenuIcon}

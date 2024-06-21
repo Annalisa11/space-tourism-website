@@ -2,8 +2,8 @@
 
 .swiper-container {
   height: auto;
-  width: calc(100% + 4rem);
-  margin-left: -2rem;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
   display: flex;
   flex-direction: column;
   z-index: auto;
@@ -11,11 +11,11 @@
 
 .swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events {
   margin: 0;
-  margin-left: -2rem;
+  margin-left: -3rem;
 }
 
 .swiper-container.swiper-container-initialized.swiper-container-horizontal {
-  margin-left: -2rem;
+  margin-left: -3rem;
 }
 
 .swiper-slide {
@@ -46,6 +46,11 @@
 
 .swiper-pagination-bullet:hover {
   cursor: pointer;
+}
+
+.names.swiper-pagination-bullet {
+  font-size: larger;
+  letter-spacing: 0.18em;
 }
 
 .names.swiper-pagination-bullet-active {
