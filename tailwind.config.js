@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         purple: { light: "#d0d6f9" },
+        inactive: "rgba(192, 192, 192, 0.32)",
       },
       backgroundImage: {
         "home-mobile": "url('./assets/home/background-home-mobile.jpg')",

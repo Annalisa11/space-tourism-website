@@ -7,8 +7,10 @@ type Props = {
 
 const SectionHeadline = ({ number, title }: Props) => {
   return (
-    <h3 className="text-white">
-      <strong>{number}</strong> {title}
+    <h3 className="flex justify-center text-white lg:mb-24">
+      <span className=" lg:w-4/5">
+        <strong>{number}</strong> {title}
+      </span>
     </h3>
   );
 };
