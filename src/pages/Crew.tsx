@@ -36,9 +36,9 @@ const Crew = () => {
     swiperRef.current.slideTo(index);
   };
   return (
-    <div className="">
+    <div className="lg:mx-auto lg:w-9/12">
       <SectionHeadline number="02" title="meet your crew" />
-      <div className="mx-auto flex flex-col lg:w-11/12 lg:flex-row-reverse lg:gap-8 ">
+      <div className="mx-auto flex  flex-col lg:flex-row-reverse lg:gap-8">
         <Slider
           swiperRef={swiperRef}
           data={crewMembers}
@@ -57,10 +57,10 @@ const Crew = () => {
           </div>
 
           <div className="mt-6 text-center">
-            <h2 className="text-lg uppercase text-purple-light opacity-45 lg:text-start lg:text-2xl">
+            <h2 className="text-2xl uppercase text-purple-light opacity-45 lg:text-start lg:text-4xl">
               {selectedCrewMember.role}
             </h2>
-            <h1 className="text-2xl uppercase lg:text-start lg:text-4xl">
+            <h1 className="text-4xl uppercase lg:text-start lg:text-6xl">
               {selectedCrewMember.name}
             </h1>
             <p className="lg:px-0 lg:text-start">{selectedCrewMember.bio}</p>

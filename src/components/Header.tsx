@@ -17,7 +17,7 @@ const Header = () => {
       <header
         className={classNames(
           {
-            "bg-black/70 text-purple-light backdrop-blur-md md:bg-transparent":
+            "bg-black/70 text-purple-light backdrop-blur-md md:bg-transparent lg:backdrop-blur-none":
               isMenuOpen,
           },
           "relative z-50 flex flex-col md:flex-row lg:mt-16",
@@ -32,7 +32,7 @@ const Header = () => {
           />
         </div>
         <div className="relative z-50 w-full md:flex md:justify-end ">
-          <hr className="z-10 my-auto -mr-24 ml-0 hidden h-[2px] w-full bg-purple-light lg:block" />
+          <hr className="z-10 my-auto -mr-24 ml-0 hidden h-[2px] w-7/12 bg-purple-light lg:block" />
           <Navigation isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </div>
       </header>

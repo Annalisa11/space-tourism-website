@@ -7,7 +7,7 @@
 
 @layer base {
   p {
-    @apply font-body text-base tracking-wider text-purple-light md:px-20 md:text-xl;
+    @apply font-body text-base tracking-wider text-purple-light md:px-20 md:text-xl lg:text-3xl;
   }
   h1 {
     @apply mb-6 font-headline text-8xl font-light leading-none tracking-tight text-white md:text-5xl md:text-9xl lg:text-6xl;
@@ -16,7 +16,7 @@
     @apply font-body text-2xl uppercase text-purple-light md:text-4xl;
   }
   hr {
-    @apply mx-4 my-8 h-2 border-purple-light opacity-20;
+    @apply mx-4 my-8 h-4 border-purple-light opacity-20;
   }
   body {
     @apply m-0 font-body;

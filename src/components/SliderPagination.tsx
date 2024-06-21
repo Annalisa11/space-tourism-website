@@ -25,7 +25,7 @@ const SliderPagination = <T extends SliderType>({
       case "names":
         return `${active ? "border-white" : "border-transparent"} uppercase border-b-2 text-white smallcaps tracking-[.18em] text-md pb-4`;
       case "numbers":
-        return `${active ? "border-white text-white" : "border-inactive text-inactive"} w-6 p-6 h-6 border-2 rounded-full flex items-center justify-center lg:mr-12`;
+        return `${active ? "border-white bg-white text-black" : "border-inactive bg-transparent text-white"} w-6 p-6 h-6 border-2 rounded-full flex items-center justify-center lg:mr-12 lg:p-12`;
     }
   };
 
@@ -49,7 +49,7 @@ const SliderPagination = <T extends SliderType>({
           <div
             key={index}
             onClick={() => onIndexChange(index)}
-            className={`${getBulletTypeStyle(activeIndex === index)} text-dosis hover:cursor-pointer`}
+            className={`${getBulletTypeStyle(activeIndex === index)} text-dosis hover:cursor-pointer md:text-xl lg:text-3xl`}
           >
             {getBulletTypeContent(index, item.name)}
           </div>

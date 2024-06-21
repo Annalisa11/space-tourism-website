@@ -38,9 +38,9 @@ const Technology = () => {
   };
 
   return (
-    <div className="">
+    <div className="lg:mx-auto lg:w-9/12">
       <SectionHeadline number="03" title="space launch 101" />
-      <div className="mx-auto flex flex-col lg:w-11/12 lg:flex-row-reverse lg:gap-8 ">
+      <div className="mx-auto flex flex-col  lg:flex-row-reverse lg:gap-8 ">
         <Slider
           swiperRef={swiperRef}
           data={technologies}
@@ -49,7 +49,7 @@ const Technology = () => {
           onSlideChange={onSlideChange}
           jpg
         />
-        <div className="flex flex-col justify-between  lg:w-1/2 lg:flex-row lg:items-start">
+        <div className="flex flex-col justify-between lg:w-1/2 lg:flex-row lg:items-start">
           <SliderPagination
             data={technologies}
             onIndexChange={onBulletClick}
@@ -59,10 +59,12 @@ const Technology = () => {
           />
 
           <div className="mt-6 flex flex-col text-center lg:m-0 lg:text-start">
-            <h2 className="text-lg uppercase text-purple-light opacity-45">
+            <h2 className="pb-4 text-2xl uppercase text-purple-light opacity-45  lg:text-4xl">
               the terminology...
             </h2>
-            <h1 className="text-2xl uppercase">{selectedTechnology.name}</h1>
+            <h1 className="text-4xl uppercase lg:text-6xl">
+              {selectedTechnology.name}
+            </h1>
             <p className="lg:px-0 lg:text-start">
               {selectedTechnology.description}
             </p>

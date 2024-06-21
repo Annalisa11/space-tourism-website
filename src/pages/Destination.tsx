@@ -38,9 +38,9 @@ const Destination = () => {
 
   return (
     <div className="">
-      <div>
+      <div className="lg:mx-auto lg:w-9/12">
         <SectionHeadline number="01" title="destination" />
-        <div className="mx-auto flex flex-col lg:w-11/12 lg:flex-row lg:gap-8">
+        <div className="mx-auto flex flex-col lg:flex-row lg:gap-12">
           <Slider
             swiperRef={swiperRef}
             data={planets}
