@@ -7,18 +7,14 @@
 
 @layer base {
   p {
-    @apply text-purple-light;
+    @apply font-body text-base tracking-wider text-purple-light md:text-xl;
   }
   h1 {
-    @apply mb-4 font-headline text-8xl font-light leading-none tracking-tight text-white md:text-5xl lg:text-6xl;
+    @apply mb-4 font-headline text-8xl font-light leading-none tracking-tight text-white md:text-5xl md:text-9xl lg:text-6xl;
   }
   h3 {
-    @apply font-body text-2xl uppercase text-purple-light;
+    @apply font-body text-2xl uppercase text-purple-light md:text-4xl;
   }
-  p {
-    @apply font-body text-base tracking-wider;
-  }
-
   hr {
     @apply mx-4 my-8 border-purple-light opacity-20;
   }
@@ -36,91 +32,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-/* slider styles */
-
-.swiper-container {
-  height: auto;
-  width: calc(100% + 4rem);
-  margin-left: -2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events {
-  margin: 0;
-  margin-left: -2rem;
-}
-
-.swiper-container.swiper-container-initialized.swiper-container-horizontal {
-  margin-left: -2rem;
-}
-
-.swiper-slide {
-  width: 100%;
-}
-
-.swiper-slide img {
-  width: 50%;
-  margin: 20px auto;
-}
-
-.swiper-wrapper {
-  display: flex;
-  order: 1;
-  width: calc(100% + 4rem);
-  align-items: flex-end;
-}
-
-.swiper-pagination {
-  order: 3;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  gap: 20px;
-  font-variant: small-caps;
-}
-
-.names.swiper-pagination-bullet-active {
-  border-bottom: 2px solid white;
-}
-
-.names {
-  color: white;
-  display: inline-flex;
-}
-
-.numbers.swiper-pagination-bullet {
-  color: rgba(192, 192, 192, 0.32);
-  border: 2px solid rgba(192, 192, 192, 0.32);
-  border-radius: 50%;
-  padding: 20px;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.numbers.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  border: 2px solid white;
-  color: white;
-}
-
-.bullets.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(192, 192, 192, 0.32);
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.16);
-  border-radius: 50%;
-}
-
-.bullets.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: white;
-}
-
-img.landscape {
-  width: 100%;
 }

@@ -1,16 +1,18 @@
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import { useState } from "react";
 
-type Props = {};
+type Props = {
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+};
 
 type NavEntry = {
   title: string;
   url: string;
 };
 
-const Navigation = ({}: Props) => {
+const Navigation = ({ isMenuOpen, toggleMenu }: Props) => {
   const navEntries: NavEntry[] = [
     { title: "Home", url: "/" },
     { title: "Destinations", url: "/destination" },
@@ -18,38 +20,33 @@ const Navigation = ({}: Props) => {
     { title: "Technology", url: "/technology" },
   ];
 
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-    console.log("menu open", isMenuOpen);
-  };
+  const zeroPad = (num: number, places: number) =>
+    String(num).padStart(places, "0");
 
   return (
-    <>
-      <Header toggleMenu={toggleMenu} />
-      <nav
-        className={classNames(
-          { hidden: isMenuOpen },
-          "absolute bottom-0 top-0 z-50 w-full bg-black/70 text-purple-light backdrop-blur-md",
-        )}
-      >
-        <Header toggleMenu={toggleMenu} />
-        <ul className="flex flex-col justify-between  ">
-          {navEntries.map(({ title, url }, index) => (
-            <li key={index}>
-              <Link
-                onClick={toggleMenu}
-                className="flex justify-center p-8 hover:cursor-pointer"
-                to={url}
-              >
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    <nav
+      className={classNames(
+        { hidden: !isMenuOpen },
+        "absolute bottom-0 top-0 h-screen w-full rounded-bl-xl rounded-tl-xl bg-black/70 text-purple-light backdrop-blur-md md:static md:flex md:h-full md:w-fit md:bg-white/5 lg:pl-32",
+      )}
+    >
+      <ul className="flex flex-col justify-between md:flex-row">
+        {navEntries.map(({ title, url }, index) => (
+          <li key={index} className="md:flex md:items-center md:justify-center">
+            <Link
+              onClick={toggleMenu}
+              className="flex h-full justify-center p-8 font-body text-lg uppercase tracking-wider md:flex md:items-center md:border-b-2 md:border-transparent md:hover:cursor-pointer md:hover:border-purple-light lg:text-2xl"
+              to={url}
+            >
+              <strong className="mr-2 hidden  text-purple-light lg:block">
+                {zeroPad(index + 1, 2)}
+              </strong>
+              {title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
