@@ -1,7 +1,3 @@
-# Frontend Mentor - Space tourism website
-
-![Design preview for the Space tourism website coding challenge](./preview.jpg)
-
 # Frontend Mentor - Space Tourism Website
 
 This is a solution to the [Space Tourism challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). 
@@ -10,7 +6,7 @@ This is a solution to the [Space Tourism challenge on Frontend Mentor](https://w
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -29,16 +25,26 @@ Users should be able to:
 
 ### Screenshots
 
-
-
+<p align="left" style="width: 70%">
+  <img src="./screenshots/home-desktop.png" align="right"  style=" width: 48%;">
+  <img src="./screenshots/destinations-desktop.png"   style=" width: 48%;">
+</p>
+<p align="left" style="width: 25%">
+<img src="./screenshots/tech-mobile.png" align="right" style=" width: 25%;">
+<img src="./screenshots/destinations-mobile.png" align="right" style="width: 25%;">
+<img src="./screenshots/crew-tablet.png"  style="width: 25%;">
+</p>
+<br/>
+<br/>
+<br/>
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
 - [Tailwind](https://tailwindcss.com/)
-- [React](https://reactjs.org/) - JS library
+- [React](https://reactjs.org/)
+- [Swiper js](https://swiperjs.com/)
 
 
 ### What I learned
