@@ -7,7 +7,7 @@
 
 @layer base {
   p {
-    @apply font-body text-base tracking-wider text-purple-light md:px-20 md:text-xl lg:text-3xl;
+    @apply font-body text-base tracking-wider text-purple-light md:px-20 md:text-xl;
   }
   h1 {
     @apply mb-6 font-headline text-8xl font-light leading-none tracking-tight text-white md:text-5xl md:text-9xl lg:text-6xl;
