@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NoMatch = () => {
   return (
@@ -7,6 +8,12 @@ const NoMatch = () => {
       <div className="font-dosis text-3xl uppercase text-white">
         Nothing to see here
       </div>
+      <Link
+        className="font-dosis px- rounded-md border-2 border-white p-4 px-8 text-lg uppercase text-white "
+        to={"/"}
+      >
+        home
+      </Link>
     </div>
   );
 };
